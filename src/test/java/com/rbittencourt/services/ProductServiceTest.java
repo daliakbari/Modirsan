@@ -1,5 +1,8 @@
 package com.rbittencourt.services;
-
+import com.epam.reportportal.junit5.ReportPortalExtension;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import com.rbittencourt.domain.Product;
 import com.rbittencourt.repositories.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.openMocks;
+@ExtendWith(ReportPortalExtension.class)
 
 public class ProductServiceTest {
 
