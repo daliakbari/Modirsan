@@ -1,5 +1,8 @@
 package com.rbittencourt.ui.test;
-
+import com.epam.reportportal.junit5.ReportPortalExtension;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import com.rbittencourt.ui.driver.DriverFactory;
 import com.rbittencourt.ui.page.ProductListPage;
 import com.rbittencourt.ui.page.ViewProductPage;
@@ -11,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+@ExtendWith(ReportPortalExtension.class)
 public class ProductUiCreateUiTest {
 
     private static WebDriver driver;
