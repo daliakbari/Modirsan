@@ -1,6 +1,6 @@
 node{
 
-  git branch: "master", url: "https://github.com/robsonbittencourt/jenkins-pipeline-example" 
+  git branch: "master", url: "https://github.com/daliakbari/jenkins-pipeline-example.git" 
 
   stage('Unit Tests') {
     withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
