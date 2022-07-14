@@ -48,5 +48,4 @@ A local Docker Registry to publish images
 
 Jenkins to run CI and CD jobs.
 
-![jenkins](media/jenkins.png)
 
