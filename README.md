@@ -1,4 +1,4 @@
-# Jenkins Pipeline Example
+# Modirsan Example
 
 ### Goal
 
@@ -17,9 +17,9 @@ Use this project as a base for ideas for your own pipeline.
 Having Docker and Maven installed, execute the commands below:
 
 ```
-git clone git@github.com:robsonbittencourt/jenkins-pipeline-example.git
+git clone git@github.com/daliakbari/Modirsan.git
 
-cd jenkins-pipeline-example
+cd modirsan
 
 mvn clean package
 
@@ -50,47 +50,3 @@ Jenkins to run CI and CD jobs.
 
 ![jenkins](media/jenkins.png)
 
-**Sonarqube** - http://localhost:9000
-
-Sonarqube is a tool that performs static code analysis and points out possible problems. 
-
-![sonar](media/sonar.png)
-
-**Selenium Grid** - http://localhost:4444/ui/index.html#/
-
-Selenium grid allow run UI Selenium tests in a Docker environment
-
-If you want to see tests running on browser access http://localhost:7900. The password is `secret`.
-
-![tests-running](media/tests-running.gif)
-
-When accessing Jenkins there are two jobs already configured: 
-
-#### products-ci
-Run this job to build, test, analyse code, and running app in DSV environment
-
-- Download the project from Github
-- Run unit-tests
-- Execute Sonarqube analysis
-- Build jar artifact
-- Build and deploy Docker image with DSV tag
-- Run docker container using DSV tag
-
-#### products-cd
-This job update UAT environment, running UI tests and make deploy on PRD environent
-
-- Download the project from Github
-- Build and deploy Docker image with UAT tag
-- Run docker container using UAT tag
-- Run interface tests in UAT stage
-- Build and deploy Docker image with PRD tag
-- Run docker container using PRD tag
-
-
-### Possible issues
-
-If you have permission problem to execute docker commands during Jenkins Pipeline, running command bellow:
-
-```
-sudo chmod 666 /var/run/docker.sock 
-```
