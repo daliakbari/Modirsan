@@ -1,6 +1,6 @@
 node{
 
-  git branch: "master", url: "git@github.com:daliakbari/Modirsan.git"
+  git branch: "master", url: "https://github.com/daliakbari/Modirsan.git"
 
   stage('Unit Tests') {
     withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
