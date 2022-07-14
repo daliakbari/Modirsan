@@ -1,6 +1,6 @@
 node{
 
-  git branch: "master", url: "https://github.com/daliakbari/jenkins-pipeline-example.git" 
+  git branch: "master", url: "git@github.com:daliakbari/Modirsan.git"
 
   stage ('Build and Deploy UAT image') {
     sh "docker tag localhost:5000/jenkins-pipeline-example:dsv localhost:5000/jenkins-pipeline-example:uat"

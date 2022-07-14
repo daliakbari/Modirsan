@@ -16,7 +16,7 @@ public class DriverFactory {
         options.addArguments("disable-infobars");
 
         try {
-            driver = new RemoteWebDriver(new URL("http://chrome:4444"), options);
+            driver = new RemoteWebDriver(new URL("http://192.168.2.164:4444"), options);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

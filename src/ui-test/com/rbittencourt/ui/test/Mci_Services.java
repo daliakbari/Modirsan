@@ -57,58 +57,13 @@ public class Mci_Services {
     public static void tearDown() {
         driver.quit();
     }
-    @Test
-    public void nearby() {
-        driver.get("https://mci.ir/");
-        driver.manage().window().setSize(new Dimension(2270, 827));
-        {
-            WebElement element = driver.findElement(By.cssSelector(".my_mci > img:nth-child(1)"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.linkText(""));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        driver.findElement(By.linkText("")).click();
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
-        driver.findElement(By.id("searchtext30")).click();
-        driver.findElement(By.id("searchtext30")).sendKeys(" شهرک غرب");
-        driver.findElement(By.cssSelector(".search-tip")).click();
-        js.executeScript("window.scrollTo(0,0)");
-        driver.findElement(By.id("select2-serviceFilter-container")).click();
-        js.executeScript("window.scrollTo(0,648.5)");
-        driver.findElement(By.cssSelector("#officeItem1 .mci-item-btn")).click();
-        driver.findElement(By.cssSelector(".active .dpco-shadow-btn")).click();
-        {
-            WebElement element = driver.findElement(By.cssSelector(".active .dpco-shadow-btn"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
-        driver.close();
-    }
+
     @Test
     public void listsOffices() {
         driver.get("https://mci.ir/");
-        driver.manage().window().setSize(new Dimension(3456, 1408));
+        driver.manage().window().setSize(new Dimension(1408, 1408));
         driver.findElement(By.linkText("دفاتر و نمایندگی ها")).click();
         driver.findElement(By.id("select2-centerType-container")).click();
-        driver.findElement(By.id("clearFilter")).click();
         driver.findElement(By.cssSelector(".odd:nth-child(1) .show-location")).click();
         driver.findElement(By.cssSelector(".close-map > .zmdi")).click();
         driver.findElement(By.id("select2-province-container")).click();
